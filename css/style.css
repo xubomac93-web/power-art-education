@@ -66,7 +66,7 @@ ul {
 .logo-icon {
   width: 36px;
   height: 36px;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: linear-gradient(135deg, #c41230 0%, #a00d20 100%);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -94,12 +94,12 @@ ul {
 }
 
 .nav-link:hover {
-  color: #ff6b35;
+  color: #c41230;
 }
 
 .header-btn {
   padding: 10px 24px;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: linear-gradient(135deg, #c41230 0%, #a00d20 100%);
   color: #fff;
   border-radius: 20px;
   font-size: 14px;
@@ -110,11 +110,113 @@ ul {
   opacity: 0.9;
 }
 
+/* ========== Banner ========== */
+.banner {
+  margin-top: 70px;
+  background: linear-gradient(135deg, #c41230 0%, #8b0d24 100%);
+  padding: 50px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+  background-size: 200px;
+}
+
+.banner-inner {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.banner h1 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 35px;
+  letter-spacing: 2px;
+}
+
+.banner h1 em {
+  font-style: normal;
+  color: #ffd700;
+  font-size: 42px;
+}
+
+.banner-offers {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.offer-item {
+  text-align: center;
+}
+
+.offer-school {
+  display: block;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+}
+
+.offer-count {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.offer-count em {
+  font-size: 16px;
+  font-style: normal;
+  color: rgba(255,255,255,0.7);
+  margin-left: 2px;
+}
+
+.banner-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.banner-tag {
+  padding: 6px 16px;
+  background: #ffd700;
+  color: #8b0d24;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.banner-text {
+  font-size: 16px;
+  color: #fff;
+}
+
+.banner-more {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
 /* ========== Stats Bar ========== */
 .stats-bar {
-  margin-top: 70px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  padding: 30px 0;
+  background: #fff;
+  padding: 40px 0;
+  border-bottom: 1px solid #eee;
 }
 
 .stats-inner {
@@ -131,23 +233,23 @@ ul {
 }
 
 .stat-num {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: #333;
   margin-bottom: 5px;
 }
 
 .stat-num .count {
-  color: #ff6b35;
+  color: #c41230;
 }
 
 .stat-label {
   font-size: 13px;
-  color: rgba(255,255,255,0.7);
+  color: #999;
 }
 
 .stat-item.highlight .stat-num {
-  color: #ff6b35;
+  color: #c41230;
 }
 
 /* ========== Schools ========== */
@@ -208,7 +310,7 @@ ul {
 }
 
 .school-tags li em {
-  color: #ff6b35;
+  color: #c41230;
   font-style: normal;
   font-weight: 600;
 }
@@ -229,7 +331,7 @@ ul {
 .offer-num {
   font-size: 28px;
   font-weight: 700;
-  color: #ff6b35;
+  color: #c41230;
 }
 
 .offer-num em {
@@ -263,11 +365,11 @@ ul {
 }
 
 .tab-btn:hover {
-  color: #ff6b35;
+  color: #c41230;
 }
 
 .tab-btn.active {
-  color: #ff6b35;
+  color: #c41230;
   font-weight: 600;
 }
 
@@ -278,7 +380,7 @@ ul {
   left: 0;
   right: 0;
   height: 2px;
-  background: #ff6b35;
+  background: #c41230;
 }
 
 .tab-panel {
@@ -325,7 +427,7 @@ ul {
   top: 12px;
   right: 12px;
   padding: 6px 14px;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: linear-gradient(135deg, #c41230 0%, #a00d20 100%);
   color: #fff;
   border-radius: 15px;
   font-size: 12px;
@@ -344,7 +446,7 @@ ul {
 
 .course-target {
   font-size: 13px;
-  color: #ff6b35;
+  color: #c41230;
   margin-bottom: 8px;
 }
 
@@ -396,7 +498,7 @@ ul {
   width: 80px;
   height: 80px;
   margin: 0 auto 12px;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: linear-gradient(135deg, #c41230 0%, #a00d20 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -422,7 +524,7 @@ ul {
 
 .team-info p {
   font-size: 13px;
-  color: #ff6b35;
+  color: #c41230;
 }
 
 /* ========== Cases ========== */
@@ -453,7 +555,7 @@ ul {
 }
 
 .case-tab.active {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: linear-gradient(135deg, #c41230 0%, #a00d20 100%);
   color: #fff;
 }
 
@@ -564,12 +666,12 @@ ul {
 .contact-form input:focus,
 .contact-form select:focus {
   outline: none;
-  border-color: #ff6b35;
+  border-color: #c41230;
 }
 
 .submit-btn {
   padding: 16px;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: linear-gradient(135deg, #c41230 0%, #a00d20 100%);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -605,7 +707,7 @@ ul {
 }
 
 .footer-brand .logo-icon {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: linear-gradient(135deg, #c41230 0%, #a00d20 100%);
 }
 
 .footer-brand .logo-text {

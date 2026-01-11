@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
   function animateCount() {
     if (counted) return;
     
-    const statsSection = document.querySelector('.stats-section');
-    if (!statsSection) return;
+    const heroStats = document.querySelector('.hero-stats');
+    if (!heroStats) return;
     
-    const rect = statsSection.getBoundingClientRect();
+    const rect = heroStats.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       counted = true;
       
@@ -72,22 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   window.addEventListener('scroll', animateCount);
   animateCount();
-
-  // 课程 Tab 切换
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabPanels = document.querySelectorAll('.tab-panel');
-  
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const tabId = this.getAttribute('data-tab');
-      
-      tabBtns.forEach(b => b.classList.remove('active'));
-      tabPanels.forEach(p => p.classList.remove('active'));
-      
-      this.classList.add('active');
-      document.getElementById(tabId)?.classList.add('active');
-    });
-  });
 
   // 案例筛选
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -127,16 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      // 模拟提交
       const submitBtn = this.querySelector('.btn-submit');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = '提交中...';
+      const originalHTML = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span>提交中...</span>';
       submitBtn.disabled = true;
       
       setTimeout(() => {
         alert('提交成功！我们的顾问将尽快与您联系。');
         this.reset();
-        submitBtn.textContent = originalText;
+        submitBtn.innerHTML = originalHTML;
         submitBtn.disabled = false;
       }, 1000);
     });
@@ -156,25 +139,31 @@ document.addEventListener('DOMContentLoaded', function() {
           behavior: 'smooth'
         });
         
-        // 关闭移动端菜单
         header.classList.remove('nav-open');
         menuToggle?.classList.remove('active');
       }
     });
   });
 
-  // Header 滚动效果
-  let lastScroll = 0;
-  
-  window.addEventListener('scroll', function() {
-    const currentScroll = window.scrollY;
-    
-    if (currentScroll > 50) {
-      header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-    } else {
-      header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    }
-    
-    lastScroll = currentScroll;
+  // 滚动动画
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.school-card, .course-card, .case-card, .team-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
   });
 });

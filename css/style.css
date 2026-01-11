@@ -110,109 +110,128 @@ ul {
   opacity: 0.9;
 }
 
-/* ========== Banner ========== */
+/* ========== Banner Slider ========== */
 .banner {
   margin-top: 70px;
-  padding: 50px 20px;
+  padding: 20px;
 }
 
-.banner-inner {
+.banner-slider {
   max-width: 1024px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #c41230 0%, #8b0d24 100%);
-  border-radius: 16px;
-  padding: 50px 40px;
-  text-align: center;
   position: relative;
+  border-radius: 16px;
   overflow: hidden;
 }
 
-.banner-inner::before {
-  content: '';
+.slider-track {
+  position: relative;
+  height: 400px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-content {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
-  background-size: 200px;
+  background: linear-gradient(135deg, rgba(196, 18, 48, 0.9) 0%, rgba(139, 13, 36, 0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
 }
 
-.banner h1 {
-  position: relative;
-  font-size: 32px;
+.slide-content h2 {
+  font-size: 36px;
   font-weight: 900;
   color: #fff;
-  margin-bottom: 35px;
-  letter-spacing: 2px;
-}
-
-.banner h1 em {
-  font-style: normal;
-  color: #ffd700;
-  font-size: 42px;
-}
-
-.banner-offers {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-}
-
-.offer-item {
+  margin-bottom: 15px;
   text-align: center;
 }
 
-.offer-school {
-  display: block;
-  font-size: 14px;
-  color: rgba(255,255,255,0.8);
-  margin-bottom: 8px;
-}
-
-.offer-count {
-  font-size: 36px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.offer-count em {
-  font-size: 16px;
+.slide-content h2 em {
   font-style: normal;
-  color: rgba(255,255,255,0.7);
-  margin-left: 2px;
+  color: #ffd700;
 }
 
-.banner-bottom {
-  position: relative;
+.slide-content p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  gap: 10px;
+  z-index: 10;
 }
 
-.banner-tag {
-  padding: 6px 16px;
-  background: #ffd700;
-  color: #8b0d24;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.banner-text {
-  font-size: 16px;
+.dot.active {
+  background: #fff;
+  width: 30px;
+  border-radius: 5px;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 50%;
   color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 10;
 }
 
-.banner-more {
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
+.slider-btn:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.slider-btn.prev {
+  left: 20px;
+}
+
+.slider-btn.next {
+  right: 20px;
 }
 
 /* ========== Stats Bar ========== */

@@ -1,0 +1,61 @@
+/* Power国际艺术教育 - CSS变量定义 */
+:root {
+  /* 主色调 - 明亮简洁 */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F9FA;
+  --color-bg-dark: #1A1A2E;
+  
+  /* 文字颜色 */
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #6C757D;
+  --color-text-light: #FFFFFF;
+  
+  /* 品牌强调色 */
+  --color-accent: #FF6B35;
+  --color-accent-hover: #E55A2B;
+  --color-accent-alt: #4A90D9;
+  
+  /* 边框与分割 */
+  --color-border: #E9ECEF;
+  --color-shadow: rgba(0,0,0,0.08);
+  
+  /* 字体家族 */
+  --font-primary: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+  --font-english: "Montserrat", sans-serif;
+  
+  /* 字号层级 */
+  --text-hero: 56px;
+  --text-h1: 42px;
+  --text-h2: 32px;
+  --text-h3: 24px;
+  --text-body: 16px;
+  --text-small: 14px;
+  
+  /* 行高 */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-loose: 1.8;
+  
+  /* 间距系统 */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+  --space-xxl: 120px;
+  
+  /* 容器宽度 */
+  --container-max: 1200px;
+  --container-narrow: 800px;
+  
+  /* 过渡动画 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* 圆角 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 50%;
+}

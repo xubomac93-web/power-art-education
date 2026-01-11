@@ -113,14 +113,21 @@ ul {
 /* ========== Banner ========== */
 .banner {
   margin-top: 70px;
+  padding: 50px 20px;
+}
+
+.banner-inner {
+  max-width: 1024px;
+  margin: 0 auto;
   background: linear-gradient(135deg, #c41230 0%, #8b0d24 100%);
-  padding: 50px 0;
+  border-radius: 16px;
+  padding: 50px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.banner::before {
+.banner-inner::before {
   content: '';
   position: absolute;
   top: 0;
@@ -131,15 +138,9 @@ ul {
   background-size: 200px;
 }
 
-.banner-inner {
-  position: relative;
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .banner h1 {
-  font-size: 36px;
+  position: relative;
+  font-size: 32px;
   font-weight: 900;
   color: #fff;
   margin-bottom: 35px;
@@ -153,9 +154,10 @@ ul {
 }
 
 .banner-offers {
+  position: relative;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
   margin-bottom: 30px;
   flex-wrap: wrap;
 }
@@ -185,6 +187,7 @@ ul {
 }
 
 .banner-bottom {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
